@@ -44,3 +44,11 @@ win32: LIBS += -L$$PWD/./ -lbox2d
 
 INCLUDEPATH += $$PWD/box2d/include
 DEPENDPATH += $$PWD/box2d/include
+
+unix|win32: LIBS += -L$$PWD/./ -lbox2d
+
+INCLUDEPATH += $$PWD/box2d/include
+DEPENDPATH += $$PWD/box2d/include
+
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/./box2d.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/./libbox2d.a
