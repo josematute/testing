@@ -20,31 +20,6 @@ HEADERS += \
 FORMS += \
     MainWindow.ui
 
-
-
-macx: LIBS += -L$$PWD/../box2d-master/build/bin/ -lbox2d
-
-INCLUDEPATH += $$PWD/../box2d-master/include
-DEPENDPATH += $$PWD/../box2d-master/include
-
-macx: PRE_TARGETDEPS += $$PWD/../box2d-master/build/bin/libbox2d.a
-
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
-DISTFILES += \
-    alien1.png
-
-RESOURCES +=
-
-win32: LIBS += -L$$PWD/./ -lbox2d
-
-INCLUDEPATH += $$PWD/box2d/include
-DEPENDPATH += $$PWD/box2d/include
-
 unix|win32: LIBS += -L$$PWD/./ -lbox2d
 
 INCLUDEPATH += $$PWD/box2d/include
